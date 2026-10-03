@@ -13,10 +13,12 @@ const loginSchema = z.object({
   password: z.string().min(1),
 });
 
+const isProd = process.env.NODE_ENV === "production";
+
 const cookieOptions = {
   httpOnly: true, // JS cookie padh nahi sakti (XSS se bachav)
-  sameSite: "lax",
-  secure: process.env.NODE_ENV === "production",
+  sameSite: isProd ? "none" : "lax", // alag domain (Vercel + Render) ke liye "none" chahiye
+  secure: isProd, // "none" ke saath secure true hona zaroori hai (HTTPS)
   maxAge: 7 * 24 * 60 * 60 * 1000, // 7 din
 };
 

@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// withCredentials: true => browser login cookie ko har request ke saath bhejta hai
+// Online me VITE_API_URL se aayega, local me neeche wala fallback chalega
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
   withCredentials: true,
 });
 

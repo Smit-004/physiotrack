@@ -1,5 +1,5 @@
 # PhysioTrack 🩺
-
+**Live demo:** https://physiotrack-ten.vercel.app
 A physiotherapy recovery tracker built with the MERN stack. Users log daily
 exercises and pain levels, and the app turns those logs into a pain trend chart,
 a streak counter and a recovery score, and warns when pain keeps rising.
